@@ -1,3 +1,5 @@
+package utils;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -5,9 +7,11 @@ import java.util.Map;
  * Created by liang on 2017/12/7.
  */
 public class BaseMass {
-    public double waterMass = 0;
+    public final static double waterMass = 0;
+    public final static double hydrogen=1;
     private Map<Character,Double> mapBaseMass ;
-    BaseMass(){
+
+    public BaseMass(){
         mapBaseMass = new HashMap<>();
         mapBaseMass.put('G',75.07);
         mapBaseMass.put('A',89.09);

@@ -1,10 +1,13 @@
+package peptide;
+
+import utils.IonMass;
+
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/12/7.
  */
-public class ProcessedSet {
-
+public class LinkedPeptide {
     private Peptide peptideOne;
     private Peptide peptideTwo;
     private List<IonMass> allPossibleIonMass;
@@ -33,8 +36,6 @@ public class ProcessedSet {
     public void setAllPossibleIonMass(List<IonMass> allPossibleIonMass) {
         this.allPossibleIonMass = allPossibleIonMass;
     }
-
-
 
 
     public double getParentMass() {

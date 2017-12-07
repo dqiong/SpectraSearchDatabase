@@ -1,12 +1,21 @@
+package peptide;
+
+import peptide.Peptide;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by liang on 2017/12/7.
+ * \* Created with IntelliJ IDEA.
+ * \* User: qiong
+ * \* Date: 2017/12/7
+ * \* Time: 20:34
+ * \* To change this template use File | Settings | File Templates.
+ * \* Description:
+ * \
  */
-
-public class ReadFile {
+public class ReadPeptide {
     public List<Peptide> doRead(String filePath){
         List<Peptide> allPeptide = new ArrayList<>();
         File file = new File(filePath);
@@ -15,7 +24,7 @@ public class ReadFile {
             String temp = bufferedReader.readLine();
             while(temp != null)
             {
-                String [] stringArray = temp.split("\\s+");
+                String [] stringArray = temp.split("\t");
                 String peptideName = stringArray[0];
                 Integer peptideCutPoint = Integer.parseInt(stringArray[1]);
                 Peptide peptide = new Peptide();
@@ -33,5 +42,4 @@ public class ReadFile {
 
         return allPeptide;
     }
-
 }

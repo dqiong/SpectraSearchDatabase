@@ -1,12 +1,18 @@
+package peptide;
+
+import utils.BaseMass;
+import utils.IonMass;
+
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by liang on 2017/12/7.
+ * Created by Administrator on 2017/12/7.
  */
-public class HandleMethod {
+public class HandlePeptide {
     private BaseMass baseMass;
-    HandleMethod(){
+    public HandlePeptide(){
         baseMass = new BaseMass();
     }
 
