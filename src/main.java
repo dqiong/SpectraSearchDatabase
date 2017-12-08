@@ -1,6 +1,10 @@
 import peptide.*;
 
 import java.util.*;
+
+import spectra.ReadSpectra;
+import spectra.Spectra;
+import utils.FilePath;
 import utils.IonMass;
 
 /**
@@ -11,10 +15,12 @@ public class main {
     public static void main(String[] args)
     {
 
-        PeptideIndex pein=new PeptideIndex();
+        PeptideIndex peindex=new PeptideIndex();
+        ReadSpectra rs=new ReadSpectra();
+        rs.doRead(FilePath.SPECTRA_PATH);
+        List<Spectra> allSpectra=rs.getAllSpectra();
 
-
-        Iterator iiii = pein.getAllLinkedPeptide().iterator();
+        Iterator iiii = peindex.getAllLinkedPeptide().iterator();
         while(iiii.hasNext())
         {
             LinkedPeptide LinkedPeptide = (LinkedPeptide) iiii.next();
