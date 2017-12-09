@@ -1,5 +1,6 @@
 package spectra;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public class Spectra {
     private double parentMass;
-    private List<Peak> peaks;
+    private List<Peak> peaks=new ArrayList<>();
 
     public void setParentMass(double parentMass) {
         this.parentMass = parentMass;
@@ -30,5 +31,9 @@ public class Spectra {
 
     public List<Peak> getPeaks() {
         return peaks;
+    }
+
+    public String toString(Spectra spec){
+        return ("Parent Mass:"+parentMass+"\n"+peaks);
     }
 }

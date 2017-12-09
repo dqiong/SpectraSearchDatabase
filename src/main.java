@@ -16,6 +16,7 @@ public class main {
     {
 
         PeptideIndex peindex=new PeptideIndex();
+
         ReadSpectra rs=new ReadSpectra();
         rs.doRead(FilePath.SPECTRA_PATH);
         List<Spectra> allSpectra=rs.getAllSpectra();

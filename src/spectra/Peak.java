@@ -29,4 +29,8 @@ public class Peak {
     public void setIntensity(double intensity) {
         this.intensity = intensity;
     }
+
+    public String toString(Peak peak){
+        return (mass+"\t"+intensity+"\n");
+    }
 }
