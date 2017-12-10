@@ -9,7 +9,7 @@ package spectra;
  * \* Description:
  * \
  */
-public class Peak {
+public class Peak implements Comparable{
     private double mass;
     private double intensity;
 
@@ -32,5 +32,19 @@ public class Peak {
 
     public String toString(Peak peak){
         return (mass+"\t"+intensity+"\n");
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Peak tmp=(Peak) o;
+        if(this.mass>tmp.getMass()){
+            return 1;
+        }
+        else if(this.mass<tmp.getMass()){
+            return -1;
+        }
+        else {
+            return 0;
+        }
     }
 }

@@ -9,6 +9,7 @@ import java.util.Map;
 public class BaseMass {
     public final static double waterMass = 0;
     public final static double hydrogen=1;
+    public final static double tolerance=0.015;
     private Map<Character,Double> mapBaseMass ;
 
     public BaseMass(){

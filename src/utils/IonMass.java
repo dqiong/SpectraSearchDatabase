@@ -2,7 +2,7 @@ package utils;
 /**
  * Created by Administrator on 2017/12/7.
  */
-public class IonMass {
+public class IonMass implements Comparable{
     public enum ion{B,Y,O}
     private ion ionProperty;
     private Double mass;
@@ -23,7 +23,19 @@ public class IonMass {
         this.mass = mass;
     }
 
-
+    @Override
+    public int compareTo(Object o) {
+        IonMass tmp=(IonMass) o;
+        if(this.mass>tmp.getMass()){
+            return 1;
+        }
+        else if(this.mass<tmp.getMass()){
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
     // 重写equals方法和hashCode方法
 
 //    @Override
