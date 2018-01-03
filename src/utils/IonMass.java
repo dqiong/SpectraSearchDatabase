@@ -36,19 +36,31 @@ public class IonMass implements Comparable{
             return 0;
         }
     }
+    //重写ToString
+
+    @Override
+    public String toString() {
+        return this.getIonProperty() + " " + this.getMass();
+    }
+
+
     // 重写equals方法和hashCode方法
 
-//    @Override
-//    public int hashCode() {
-//        return mass.hashCode();
-//    }
-//    @Override
-//    public boolean equals(Object obj) {
-//        if(obj == this)
-//            return true;
-//        if(!(obj instanceof IonMass))
-//            return false;
-//        IonMass i = (IonMass)obj;
-//        return i.ionProperty.equals(ionProperty) && i.mass.equals(mass);
-//    }
+    @Override
+    public int hashCode() {
+        int temp ;
+        if(this.getIonProperty() == ion.B) temp = 1;
+        else temp = 0;
+
+        return mass.hashCode()+ temp;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == this)
+            return true;
+        if(!(obj instanceof IonMass))
+            return false;
+        IonMass i = (IonMass)obj;
+        return i.ionProperty.equals(ionProperty) && i.mass.equals(mass);
+    }
 }

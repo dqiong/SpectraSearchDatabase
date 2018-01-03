@@ -1,10 +1,14 @@
 package peptide;
-
-import peptide.Peptide;
+import utils.FilePath;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -16,6 +20,34 @@ import java.util.List;
  * \
  */
 public class ReadPeptide {
+    public List<Peptide> doRead(String filePath){
+        List<Peptide> allPeptide = new ArrayList<>();
+        File excelFile=new File(filePath);
+        try{
+            XSSFWorkbook wb = new XSSFWorkbook(new FileInputStream(excelFile));
+            XSSFSheet sheet = wb.getSheetAt(1);
+            Boolean is_head=false;
+            for(Row row:sheet){
+                if(!is_head){
+                    is_head=true;
+                    continue;
+                }
+                Cell cell=row.getCell(3);
+                String peptide_name=cell.getStringCellValue();
+                Peptide peptide = new Peptide();
+                peptide.setName(peptide_name);
+                allPeptide.add(peptide);
+               // System.out.println(peptide.getName());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return allPeptide;
+    }
+    /*
     public List<Peptide> doRead(String filePath){
         List<Peptide> allPeptide = new ArrayList<>();
         File file = new File(filePath);
@@ -41,5 +73,11 @@ public class ReadPeptide {
         }
 
         return allPeptide;
+    }
+    */
+    public static void main(String[] args)
+    {
+        ReadPeptide rp=new ReadPeptide();
+        List<Peptide> allPeptide=rp.doRead(FilePath.PEPTIDE_PATH);
     }
 }

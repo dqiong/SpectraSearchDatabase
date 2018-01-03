@@ -5,7 +5,7 @@ package peptide;
  */
 public class Peptide {
     private String name;
-    private Integer cutPoint;
+    private Integer cutPoint=0;
 
     public String getName() {
         return name;

@@ -35,11 +35,11 @@ public class PeptideIndex {
         this.allLinkedPeptide = allLinkedPeptide;
     }
 
-    public void linkPeptide(List<Peptide> readResult, List<Peptide> readResultTemp,  HandlePeptide handlePeptide){
+    public void linkPeptide(List<Peptide> readResult,  HandlePeptide handlePeptide){
         Integer num=new Integer(0);
         for(int i = 0 ; i < readResult.size() ; i++)
         {
-            for(int j = i+1 ; j < readResultTemp.size();j++)
+            for(int j = i+1 ; j < readResult.size();j++)
             {
                 Peptide composeOne = readResult.get(i);
                 Peptide composeTwo = readResult.get(j);
@@ -71,9 +71,8 @@ public class PeptideIndex {
     public PeptideIndex(){
         ReadPeptide readFile = new ReadPeptide();
         List<Peptide> readResult = readFile.doRead(FilePath.PEPTIDE_PATH);
-        List<Peptide> readResultTemp = readResult;
         HandlePeptide handlePeptide = new HandlePeptide();
-        linkPeptide(readResult,readResultTemp,handlePeptide);
+        linkPeptide(readResult,handlePeptide);
 
         /*
         Iterator iiii = allLinkedPeptide.iterator();

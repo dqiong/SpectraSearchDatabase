@@ -1,0 +1,2 @@
+newMz.set(i,preMz.get(i)*c-(c-1)*protonMW);
+PROTON_MASS = 1.00727638;

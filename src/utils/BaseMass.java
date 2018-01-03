@@ -7,9 +7,13 @@ import java.util.Map;
  * Created by liang on 2017/12/7.
  */
 public class BaseMass {
-    public final static double waterMass = 0;
-    public final static double hydrogen=1;
-    public final static double tolerance=0.015;
+    public final static double waterMass = 18.01524;
+    public final static double hydrogen=1.00727638;
+    public final static double tolerance=0.005;
+    public final static double PROTON_MASS = 1.00727638;
+    public final static double PHOTO=228.110996;
+    public final static double HALF_PHOTO=114.055498;
+
     private Map<Character,Double> mapBaseMass ;
 
     public BaseMass(){

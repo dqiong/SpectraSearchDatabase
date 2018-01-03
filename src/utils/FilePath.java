@@ -10,6 +10,7 @@ package utils;
  * \
  */
 public class FilePath {
-    public final static String SPECTRA_PATH="./spectra.txt";
-    public final static String PEPTIDE_PATH="./peptide.txt";
+    public final static String SPECTRA_PATH="./data/DYT-BSA_HCDFT.mgfprocessed.mgf";
+    public final static String PEPTIDE_PATH="./data/bsa_pep.xlsx";
+
 }
