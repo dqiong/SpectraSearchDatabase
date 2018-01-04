@@ -1,6 +1,6 @@
 package spectra;
 
-import peptide.Peptide;
+import utils.FilePath;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -32,30 +32,32 @@ public class ReadSpectra {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String temp = bufferedReader.readLine();
-            List<Peak> peaks= new ArrayList<>();
             double parentMass=0.0;
-            while(temp != null)
+            int count=0;
+            while(temp != null &&count<100)
             {
+                count++;
 
-                if (temp.split("=")[0].equals("PARENT_MASS")){
+                if (temp.split("=")[0].equals("PEPMASS")){
                     String [] stringArray = temp.split("=");
                     parentMass=Double.parseDouble(stringArray[1]);
-                }
-                else if(temp.split("\t").length>1){
-                    String [] tempPeak= temp.split("\t");
-                    Peak peak=new Peak();
-                    peak.setMass(Double.parseDouble(tempPeak[0]));
-                    peak.setIntensity(Double.parseDouble(tempPeak[1]));
-                    peaks.add(peak);
-                }
-                else if(temp.equals("END IONS")){
+                    List<Peak> peaks= new ArrayList<>();
+                    temp = bufferedReader.readLine();
+                    while(temp!=null && temp.split("\t").length>1){
+                        String [] tempPeak= temp.split("\t");
+                        Peak peak=new Peak();
+                        peak.setMass(Double.parseDouble(tempPeak[0]));
+                        peak.setIntensity(Double.parseDouble(tempPeak[1]));
+                        peaks.add(peak);
+                        temp = bufferedReader.readLine();
+                    }
                     Spectra spec= new Spectra();
                     spec.setParentMass(parentMass);
                     spec.setPeaks(peaks);
                     allSpectra.add(spec);
                     parentMass=0.0;
-                    peaks.clear();
                 }
+                temp = bufferedReader.readLine();
             }
 
         } catch (FileNotFoundException e) {
@@ -63,5 +65,11 @@ public class ReadSpectra {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args)
+    {
+        ReadSpectra rs=new ReadSpectra();
+        rs.doRead(FilePath.SPECTRA_PATH);
+        System.out.println(rs.getAllSpectra().size());
     }
 }

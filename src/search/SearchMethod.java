@@ -1,6 +1,5 @@
 package search;
 
-import com.sun.javafx.scene.EnteredExitedHandler;
 import peptide.LinkedPeptide;
 import spectra.Spectra;
 import spectra.Peak;
@@ -40,6 +39,14 @@ public class SearchMethod {
             return  false;
     }
 
+    private boolean equalParentMass(double a,double b){
+        if( ((a- BaseMass.parent_tolerance)<b && (a+ BaseMass.parent_tolerance)>b) || (((b- BaseMass.parent_tolerance)<a && (b+ BaseMass.parent_tolerance)>a)) ){
+            return true;
+        }
+        else
+            return  false;
+    }
+
     //一个谱图与数据库中一个理论交联肽段离子比对得分
     private double getMatchedScore(Spectra spectra,LinkedPeptide linkedPeptide){
         double score=0.0;
@@ -57,7 +64,7 @@ public class SearchMethod {
                     break;
                 }
             }
-            if(i==(ionMasses.size()-1)){
+            if(i>=(ionMasses.size()-1)){
                 break;
             }
         }
@@ -88,20 +95,25 @@ public class SearchMethod {
         for(Spectra spectra:allSpectra){
             Integer parentMass=new Double(spectra.getParentMass()).intValue();
             ArrayList<Integer> indexOfParentMass=new ArrayList<>();
-            if(peptideIndex.containsKey(parentMass-1)){
-                indexOfParentMass.addAll(peptideIndex.get(parentMass-1));
-            }
             if(peptideIndex.containsKey(parentMass)){
                 indexOfParentMass.addAll(peptideIndex.get(parentMass));
             }
-            if(peptideIndex.containsKey(parentMass+1)){
-                indexOfParentMass.addAll(peptideIndex.get(parentMass+1));
-            }
             if(indexOfParentMass.size()<1){
-                System.out.println("spectra: "+spectra+"parent mass 数据库中无对应的交联肽段！");
+                continue;
+                //System.out.println("spectra: "+spectra+"parent mass 数据库中无对应的交联肽段！");
             }
             else {
-                this.resultMatch.add(this.spectraAlignmentLinkedPeptideIndex(allLinkedPeptide,indexOfParentMass,spectra));
+                ArrayList<Integer> indexOfCandidateLinkedPeptide=new ArrayList<>();
+                for(Integer i: indexOfParentMass){
+                    LinkedPeptide linkedPeptide=allLinkedPeptide.get(i);
+                    if(this.equalParentMass(linkedPeptide.getParentMass(),spectra.getParentMass())){
+                        indexOfCandidateLinkedPeptide.add(i);
+                    }
+                }
+                if(indexOfCandidateLinkedPeptide.size()>0){
+                    this.resultMatch.add(this.spectraAlignmentLinkedPeptideIndex(allLinkedPeptide,indexOfCandidateLinkedPeptide,spectra));
+                }
+
             }
         }
     }

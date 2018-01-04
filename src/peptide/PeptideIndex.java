@@ -68,9 +68,9 @@ public class PeptideIndex {
         }
     }
 
-    public PeptideIndex(){
+    public void init(String filePath){
         ReadPeptide readFile = new ReadPeptide();
-        List<Peptide> readResult = readFile.doRead(FilePath.PEPTIDE_PATH);
+        List<Peptide> readResult = readFile.doRead(filePath);
         HandlePeptide handlePeptide = new HandlePeptide();
         linkPeptide(readResult,handlePeptide);
 

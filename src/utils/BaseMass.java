@@ -10,6 +10,7 @@ public class BaseMass {
     public final static double waterMass = 18.01524;
     public final static double hydrogen=1.00727638;
     public final static double tolerance=0.005;
+    public final static double parent_tolerance=0.02;
     public final static double PROTON_MASS = 1.00727638;
     public final static double PHOTO=228.110996;
     public final static double HALF_PHOTO=114.055498;
@@ -18,26 +19,26 @@ public class BaseMass {
 
     public BaseMass(){
         mapBaseMass = new HashMap<>();
-        mapBaseMass.put('G',75.07);
-        mapBaseMass.put('A',89.09);
-        mapBaseMass.put('V',117.15);
-        mapBaseMass.put('L',131.17);
-        mapBaseMass.put('I',131.17);
-        mapBaseMass.put('F',165.19);
-        mapBaseMass.put('W',204.23);
-        mapBaseMass.put('Y',181.19);
-        mapBaseMass.put('D',133.10);
-        mapBaseMass.put('N',132.12);
-        mapBaseMass.put('E',147.13);
-        mapBaseMass.put('K',146.19);
-        mapBaseMass.put('Q',146.15);
-        mapBaseMass.put('M',149.21);
-        mapBaseMass.put('S',105.09);
-        mapBaseMass.put('T',119.12);
-        mapBaseMass.put('C',121.16);
-        mapBaseMass.put('P',115.13);
-        mapBaseMass.put('H',155.16);
-        mapBaseMass.put('R',174.20);
+        mapBaseMass.put('G',57.021464);
+        mapBaseMass.put('A',71.037114);
+        mapBaseMass.put('V',99.068414);
+        mapBaseMass.put('L',113.084064);
+        mapBaseMass.put('I',113.084064);
+        mapBaseMass.put('F',147.068414);
+        mapBaseMass.put('W',186.079313);
+        mapBaseMass.put('Y',163.06332);
+        mapBaseMass.put('D',115.026943);
+        mapBaseMass.put('N',114.042927);
+        mapBaseMass.put('E',129.042593);
+        mapBaseMass.put('K',128.094963);
+        mapBaseMass.put('Q',128.058578);
+        mapBaseMass.put('M',131.040485);
+        mapBaseMass.put('S',87.032028);
+        mapBaseMass.put('T',101.047679);
+        mapBaseMass.put('C',103.009185);
+        mapBaseMass.put('P',97.052764);
+        mapBaseMass.put('H',137.058912);
+        mapBaseMass.put('R',156.101111);
     }
     public Map<Character,Double> getMapBaseMass(){
         return this.mapBaseMass;

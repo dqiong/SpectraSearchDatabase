@@ -30,7 +30,7 @@ public class Peak implements Comparable{
         this.intensity = intensity;
     }
 
-    public String toString(Peak peak){
+    public String toString(){
         return (mass+"\t"+intensity+"\n");
     }
 

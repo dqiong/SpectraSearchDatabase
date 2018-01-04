@@ -1,44 +1,57 @@
 import peptide.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import spectra.ReadSpectra;
 import spectra.Spectra;
 import utils.FilePath;
 import utils.IonMass;
+import search.SearchMethod;
 
 /**
  * Created by liang on 2017/12/7.
  */
 public class main {
 
+    public static String GetNowDate(){
+        String temp_str="";
+        Date dt = new Date();
+        //最后的aa表示“上午”或“下午”    HH表示24小时制    如果换成hh表示12小时制
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss aa");
+        temp_str=sdf.format(dt);
+        return temp_str;
+    }
+
     public static void main(String[] args)
     {
 
+        System.out.println(GetNowDate());
         PeptideIndex peindex=new PeptideIndex();
+        peindex.init(FilePath.PEPTIDE_PATH);
+        System.out.println("read peptide!");
+        System.out.println(GetNowDate());
 
         ReadSpectra rs=new ReadSpectra();
         rs.doRead(FilePath.SPECTRA_PATH);
-        List<Spectra> allSpectra=rs.getAllSpectra();
+        System.out.println("read spectra!");
+        System.out.println(GetNowDate());
 
-        Iterator iiii = peindex.getAllLinkedPeptide().iterator();
-        while(iiii.hasNext())
-        {
-            LinkedPeptide LinkedPeptide = (LinkedPeptide) iiii.next();
-            System.out.println(LinkedPeptide.getPeptideOne().getName() + " " + LinkedPeptide.getPeptideTwo().getName()
-             + " " + LinkedPeptide.getParentMass());
-        }
-
-
-//        HandleMethod handleMethod = new HandleMethod();
-//        handleMethod.setReagentMass(0);
-//        //System.out.println(handleMethod.calculate("GAVGNST",));
-//        List<IonMass> result = handleMethod.getAllPossibleIonMass("GAVGNST",4,"FWYDC",3);
-//        Iterator iterator = result.iterator();
-//        while(iterator.hasNext())
+//        Iterator iiii = peindex.getAllLinkedPeptide().iterator();
+//        while(iiii.hasNext())
 //        {
-//            IonMass i = (IonMass) iterator.next();
-//            System.out.println(i.getIonProperty() + "  " + i.getMass());
+//            LinkedPeptide LinkedPeptide = (LinkedPeptide) iiii.next();
+//            System.out.println(LinkedPeptide.getPeptideOne().getName() + " " + LinkedPeptide.getPeptideTwo().getName()
+//             + " " + LinkedPeptide.getParentMass());
 //        }
+
+        SearchMethod sm=new SearchMethod();
+        sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),peindex.getPeptideIndex(),rs.getAllSpectra());
+        System.out.println("result size:"+sm.getResultMatch().size());
+        if(sm.getResultMatch().size()>1){
+            System.out.println(sm.getResultMatch().get(0));
+        }
+        System.out.println(GetNowDate());
     }
 }

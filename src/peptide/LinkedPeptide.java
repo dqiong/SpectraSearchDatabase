@@ -45,4 +45,9 @@ public class LinkedPeptide {
     public void setParentMass(double parentMass) {
         this.parentMass = parentMass;
     }
+
+    public String toString(){
+
+        return (this.peptideOne.getName()+"\t"+this.peptideTwo.getName()+"\n");
+    }
 }

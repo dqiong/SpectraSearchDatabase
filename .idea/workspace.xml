@@ -5,25 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6945b2b8-01fc-4d3f-a00d-943fc708bd5a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/poi_3_17.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/BaseMass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/HandleMethod.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/IonMass$ion.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/IonMass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/Peptide.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/ProcessedSet.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/ReadFile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/main.class" afterPath="$PROJECT_DIR$/out/production/protein/main.class" />
-      <change beforePath="$PROJECT_DIR$/protein.iml" afterPath="$PROJECT_DIR$/protein.iml" />
-      <change beforePath="$PROJECT_DIR$/src/peptide/HandlePeptide.java" afterPath="$PROJECT_DIR$/src/peptide/HandlePeptide.java" />
-      <change beforePath="$PROJECT_DIR$/src/peptide/Peptide.java" afterPath="$PROJECT_DIR$/src/peptide/Peptide.java" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
+      <change beforePath="$PROJECT_DIR$/src/peptide/LinkedPeptide.java" afterPath="$PROJECT_DIR$/src/peptide/LinkedPeptide.java" />
       <change beforePath="$PROJECT_DIR$/src/peptide/PeptideIndex.java" afterPath="$PROJECT_DIR$/src/peptide/PeptideIndex.java" />
-      <change beforePath="$PROJECT_DIR$/src/peptide/ReadPeptide.java" afterPath="$PROJECT_DIR$/src/peptide/ReadPeptide.java" />
+      <change beforePath="$PROJECT_DIR$/src/search/MatchEntry.java" afterPath="$PROJECT_DIR$/src/search/MatchEntry.java" />
+      <change beforePath="$PROJECT_DIR$/src/search/SearchMethod.java" afterPath="$PROJECT_DIR$/src/search/SearchMethod.java" />
+      <change beforePath="$PROJECT_DIR$/src/spectra/Peak.java" afterPath="$PROJECT_DIR$/src/spectra/Peak.java" />
+      <change beforePath="$PROJECT_DIR$/src/spectra/ReadSpectra.java" afterPath="$PROJECT_DIR$/src/spectra/ReadSpectra.java" />
+      <change beforePath="$PROJECT_DIR$/src/spectra/Spectra.java" afterPath="$PROJECT_DIR$/src/spectra/Spectra.java" />
       <change beforePath="$PROJECT_DIR$/src/utils/BaseMass.java" afterPath="$PROJECT_DIR$/src/utils/BaseMass.java" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FilePath.java" afterPath="$PROJECT_DIR$/src/utils/FilePath.java" />
-      <change beforePath="$PROJECT_DIR$/src/utils/IonMass.java" afterPath="$PROJECT_DIR$/src/utils/IonMass.java" />
     </list>
     <ignored path="protein.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,29 +35,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BaseMass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/BaseMass.java">
+      <file leaf-file-name="Spectra.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spectra/Spectra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="444">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Peak.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spectra/Peak.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HandlePeptide.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/peptide/HandlePeptide.java">
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+            <state relative-caret-position="620">
+              <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#480#481#0" expanded="true" />
-                <element signature="e#526#527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,9 +72,21 @@
       <file leaf-file-name="LinkedPeptide.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/peptide/LinkedPeptide.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="464">
+              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadSpectra.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spectra/ReadSpectra.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,15 +94,33 @@
       <file leaf-file-name="SearchMethod.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/search/SearchMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-94">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="-1376">
+              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
-                <element signature="e#716#717#0" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadPeptide.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/peptide/ReadPeptide.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-756">
+              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchEntry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/search/MatchEntry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,8 +128,8 @@
       <file leaf-file-name="PeptideIndex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/peptide/PeptideIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="53" column="60" lean-forward="true" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+            <state relative-caret-position="560">
+              <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#512#513#0" expanded="true" />
@@ -118,53 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadPeptide.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/peptide/ReadPeptide.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-554">
-              <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="15" column="5" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchEntry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/search/MatchEntry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Peptide.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/peptide/Peptide.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
               <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FilePath.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/FilePath.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -206,21 +191,21 @@
         <option value="$PROJECT_DIR$/src/BaseMass.java" />
         <option value="$PROJECT_DIR$/src/HandleMethod.java" />
         <option value="$PROJECT_DIR$/src/peptide/ProcessedSet.java" />
-        <option value="$PROJECT_DIR$/src/peptide/LinkedPeptide.java" />
-        <option value="$PROJECT_DIR$/src/spectra/ReadSpectra.java" />
-        <option value="$PROJECT_DIR$/src/search/MatchEntry.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/spectra/Spectra.java" />
-        <option value="$PROJECT_DIR$/src/spectra/Peak.java" />
-        <option value="$PROJECT_DIR$/src/search/SearchMethod.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/utils/IonMass.java" />
         <option value="$PROJECT_DIR$/src/peptide/Peptide.java" />
         <option value="$PROJECT_DIR$/src/peptide/ReadPeptide.java" />
-        <option value="$PROJECT_DIR$/src/peptide/PeptideIndex.java" />
         <option value="$PROJECT_DIR$/src/utils/FilePath.java" />
         <option value="$PROJECT_DIR$/src/peptide/HandlePeptide.java" />
+        <option value="$PROJECT_DIR$/src/peptide/PeptideIndex.java" />
+        <option value="$PROJECT_DIR$/src/spectra/Peak.java" />
+        <option value="$PROJECT_DIR$/src/spectra/Spectra.java" />
+        <option value="$PROJECT_DIR$/src/spectra/ReadSpectra.java" />
         <option value="$PROJECT_DIR$/src/utils/BaseMass.java" />
+        <option value="$PROJECT_DIR$/src/search/SearchMethod.java" />
+        <option value="$PROJECT_DIR$/src/peptide/LinkedPeptide.java" />
+        <option value="$PROJECT_DIR$/src/search/MatchEntry.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
       </list>
     </option>
   </component>
@@ -322,7 +307,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ReadPeptide">
+  <component name="RunManager" selected="Application.main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -338,6 +323,25 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="peptide.ReadPeptide" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="protein" />
+      <envs />
+    </configuration>
+    <configuration name="ReadSpectra" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="spectra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="spectra.ReadSpectra" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -758,14 +762,16 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.main" />
       <item index="1" class="java.lang.String" itemvalue="Application.ReadPeptide" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ReadSpectra" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ReadPeptide" />
-        <item index="1" class="java.lang.String" itemvalue="Application.main" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ReadSpectra" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ReadPeptide" />
       </list>
     </recent_temporary>
   </component>
@@ -802,9 +808,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2328618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3101197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25680086" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25571272" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16364606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -848,15 +854,15 @@
         <state relative-caret-position="540">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#414#415#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#538#539#0" expanded="false" />
-            <element signature="e#645#646#0" expanded="false" />
-            <element signature="e#673#674#0" expanded="false" />
-            <element signature="e#716#717#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#441#442#0" expanded="false" />
+            <element signature="e#485#486#0" expanded="false" />
+            <element signature="e#531#532#0" expanded="false" />
+            <element signature="e#565#566#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+            <element signature="e#700#701#0" expanded="false" />
+            <element signature="e#731#732#0" expanded="false" />
+            <element signature="e#1033#1034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -874,8 +880,8 @@
         <state relative-caret-position="680">
           <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding>
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#896#897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -891,8 +897,8 @@
             <element signature="e#503#504#0" expanded="false" />
             <element signature="e#553#554#0" expanded="false" />
             <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#626#627#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -939,22 +945,22 @@
           <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#531#532#0" expanded="false" />
-            <element signature="e#578#579#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="e#663#664#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#814#815#0" expanded="false" />
-            <element signature="e#857#858#0" expanded="false" />
-            <element signature="e#892#893#0" expanded="false" />
-            <element signature="e#952#953#0" expanded="false" />
-            <element signature="e#1000#1001#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1060#1061#0" expanded="false" />
-            <element signature="e#1102#1103#0" expanded="false" />
-            <element signature="e#1136#1137#0" expanded="false" />
+            <element signature="e#528#529#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#605#606#0" expanded="false" />
+            <element signature="e#643#644#0" expanded="false" />
+            <element signature="e#690#691#0" expanded="false" />
+            <element signature="e#726#727#0" expanded="false" />
+            <element signature="e#791#792#0" expanded="false" />
+            <element signature="e#841#842#0" expanded="false" />
+            <element signature="e#884#885#0" expanded="false" />
+            <element signature="e#919#920#0" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1027#1028#0" expanded="false" />
+            <element signature="e#1059#1060#0" expanded="false" />
+            <element signature="e#1087#1088#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
+            <element signature="e#1163#1164#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -965,10 +971,10 @@
           <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#568#569#0" expanded="false" />
+            <element signature="e#602#603#0" expanded="false" />
+            <element signature="e#666#667#0" expanded="false" />
+            <element signature="e#712#713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -978,7 +984,7 @@
         <state relative-caret-position="280">
           <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1027,118 +1033,11 @@
     <entry file="file://$PROJECT_DIR$/src/HandleMethod.java" />
     <entry file="file://$PROJECT_DIR$/src/IonMass.java" />
     <entry file="file://$PROJECT_DIR$/src/peptide/ProcessedSet.java" />
-    <entry file="file://$PROJECT_DIR$/src/spectra/ReadSpectra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-388">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#567#568#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spectra/Spectra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#414#415#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#538#539#0" expanded="false" />
-            <element signature="e#645#646#0" expanded="false" />
-            <element signature="e#673#674#0" expanded="false" />
-            <element signature="e#716#717#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spectra/Peak.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="49" column="1" lean-forward="false" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-          <folding>
-            <element signature="e#340#341#0" expanded="false" />
-            <element signature="e#372#373#0" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#684#685#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/IonMass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-          <folding>
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/peptide/Peptide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/peptide/ReadPeptide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-554">
-          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/MatchEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/search/SearchMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,10 +1049,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/IonMass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/BaseMass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/peptide/HandlePeptide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spectra/Spectra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spectra/Peak.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/peptide/LinkedPeptide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spectra/ReadSpectra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/search/MatchEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/search/SearchMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1376">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/peptide/PeptideIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="53" column="60" lean-forward="true" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+        <state relative-caret-position="560">
+          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#512#513#0" expanded="true" />
@@ -1168,34 +1153,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/BaseMass.java">
+    <entry file="file://$PROJECT_DIR$/src/peptide/Peptide.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        <state relative-caret-position="140">
+          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/peptide/LinkedPeptide.java">
+    <entry file="file://$PROJECT_DIR$/src/peptide/ReadPeptide.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/peptide/HandlePeptide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        <state relative-caret-position="-756">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

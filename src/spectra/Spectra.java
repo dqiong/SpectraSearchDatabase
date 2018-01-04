@@ -2,6 +2,7 @@ package spectra;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -33,7 +34,15 @@ public class Spectra {
         return peaks;
     }
 
-    public String toString(Spectra spec){
-        return ("Parent Mass:"+parentMass+"\n"+peaks);
+    public String toString(){
+        StringBuilder res=new StringBuilder();
+        res.append("Parent Mass:");
+        res.append(parentMass);
+        res.append("\n");
+        Iterator it1 = this.peaks.iterator();
+        while (it1.hasNext()) {
+            res.append(it1.next());
+        }
+        return res.toString();
     }
 }

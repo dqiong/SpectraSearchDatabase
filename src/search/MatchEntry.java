@@ -4,6 +4,7 @@ import peptide.LinkedPeptide;
 import spectra.Peak;
 import spectra.Spectra;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -51,5 +52,13 @@ public class MatchEntry {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public String toString(){
+        StringBuilder res=new StringBuilder();
+        res.append(spectra);
+        res.append("匹配到的交联肽：");
+        res.append(linkedPeptide);
+        return res.toString();
     }
 }
