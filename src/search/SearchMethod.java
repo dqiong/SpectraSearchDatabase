@@ -1,5 +1,6 @@
 package search;
 
+import peptide.HandlePeptideFour;
 import peptide.LinkedPeptide;
 import spectra.Spectra;
 import spectra.Peak;
@@ -64,7 +65,7 @@ public class SearchMethod {
                     break;
                 }
             }
-            if(i>=(ionMasses.size()-1)){
+            if(i>=(ionMasses.size()-1) || i>peaks.size()){
                 break;
             }
         }
@@ -75,18 +76,18 @@ public class SearchMethod {
                                                      ArrayList<Integer> index, Spectra spectra){
         MatchEntry me=new MatchEntry();
         me.setSpectra(spectra);
-        double maxScore=0.0;
-        LinkedPeptide resultLinkedPeptide=new LinkedPeptide();
+        double maxScore=-1.0;
+        int resultIndex=-1;
         for(Integer i: index){
             LinkedPeptide linkedPeptide=allLinkedPeptide.get(i);
             double tempScore=this.getMatchedScore(spectra,linkedPeptide);
             if(tempScore>maxScore){
-                resultLinkedPeptide=linkedPeptide;
+                resultIndex=i;
                 maxScore=tempScore;
             }
         }
         me.setScore(maxScore);
-        me.setLinkedPeptide(resultLinkedPeptide);
+        me.setLinkedPeptide(allLinkedPeptide.get(resultIndex));
         return me;
     }
 
@@ -95,8 +96,14 @@ public class SearchMethod {
         for(Spectra spectra:allSpectra){
             Integer parentMass=new Double(spectra.getParentMass()).intValue();
             ArrayList<Integer> indexOfParentMass=new ArrayList<>();
+            if(peptideIndex.containsKey(parentMass-1)){
+                indexOfParentMass.addAll(peptideIndex.get(parentMass-1));
+            }
             if(peptideIndex.containsKey(parentMass)){
                 indexOfParentMass.addAll(peptideIndex.get(parentMass));
+            }
+            if(peptideIndex.containsKey(parentMass+1)){
+                indexOfParentMass.addAll(peptideIndex.get(parentMass+1));
             }
             if(indexOfParentMass.size()<1){
                 continue;
@@ -108,6 +115,14 @@ public class SearchMethod {
                     LinkedPeptide linkedPeptide=allLinkedPeptide.get(i);
                     if(this.equalParentMass(linkedPeptide.getParentMass(),spectra.getParentMass())){
                         indexOfCandidateLinkedPeptide.add(i);
+                        if(!allLinkedPeptide.get(i).getIsCalculatedIonMass()){
+                            allLinkedPeptide.get(i).setIsCalculatedIonMass(true);
+                            HandlePeptideFour handlePeptide=new HandlePeptideFour();
+                            String p1=allLinkedPeptide.get(i).getPeptideOne().getName();
+                            String p2=allLinkedPeptide.get(i).getPeptideTwo().getName();
+                            allLinkedPeptide.get(i).setAllPossibleIonMass(handlePeptide.getAllPossibleOnlyFourCases(p1,p2));
+                        }
+
                     }
                 }
                 if(indexOfCandidateLinkedPeptide.size()>0){

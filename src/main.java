@@ -1,5 +1,7 @@
 import peptide.*;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -30,12 +32,12 @@ public class main {
         System.out.println(GetNowDate());
         PeptideIndex peindex=new PeptideIndex();
         peindex.init(FilePath.PEPTIDE_PATH);
-        System.out.println("read peptide!");
+        System.out.println("read peptide!"+peindex.getAllLinkedPeptide().size());
         System.out.println(GetNowDate());
 
         ReadSpectra rs=new ReadSpectra();
         rs.doRead(FilePath.SPECTRA_PATH);
-        System.out.println("read spectra!");
+        System.out.println("read spectra!"+rs.getAllSpectra().size());
         System.out.println(GetNowDate());
 
 //        Iterator iiii = peindex.getAllLinkedPeptide().iterator();
@@ -46,12 +48,22 @@ public class main {
 //             + " " + LinkedPeptide.getParentMass());
 //        }
 
+
         SearchMethod sm=new SearchMethod();
         sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),peindex.getPeptideIndex(),rs.getAllSpectra());
-        System.out.println("result size:"+sm.getResultMatch().size());
-        if(sm.getResultMatch().size()>1){
-            System.out.println(sm.getResultMatch().get(0));
+
+        try{
+            FileWriter fw=new FileWriter(new File(FilePath.RESULT_PATH));
+            for(int i=0;i<sm.getResultMatch().size();i++){
+                String str= sm.getResultMatch().get(i).toString();
+                fw.write(str);
+            }
+            fw.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
+        System.out.println("result size:"+sm.getResultMatch().size());
         System.out.println(GetNowDate());
     }
 }

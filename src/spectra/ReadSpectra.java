@@ -34,7 +34,7 @@ public class ReadSpectra {
             String temp = bufferedReader.readLine();
             double parentMass=0.0;
             int count=0;
-            while(temp != null &&count<100)
+            while(temp != null)
             {
                 count++;
 

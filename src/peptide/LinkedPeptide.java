@@ -12,6 +12,19 @@ public class LinkedPeptide {
     private Peptide peptideTwo;
     private List<IonMass> allPossibleIonMass;
     double parentMass;
+    private boolean isCalculatedIonMass;
+
+    public LinkedPeptide(){
+        this.isCalculatedIonMass=false;
+    }
+
+    public boolean getIsCalculatedIonMass() {
+        return isCalculatedIonMass;
+    }
+
+    public void setIsCalculatedIonMass(boolean calculatedIonMass) {
+        isCalculatedIonMass = calculatedIonMass;
+    }
 
     public Peptide getPeptideOne() {
         return peptideOne;
@@ -47,7 +60,11 @@ public class LinkedPeptide {
     }
 
     public String toString(){
-
-        return (this.peptideOne.getName()+"\t"+this.peptideTwo.getName()+"\n");
+        StringBuilder res=new StringBuilder();
+        res.append(peptideOne.getName());
+        res.append("\t");
+        res.append(peptideTwo.getName());
+        res.append("\n");
+        return res.toString();
     }
 }

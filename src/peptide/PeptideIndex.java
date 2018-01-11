@@ -35,15 +35,16 @@ public class PeptideIndex {
         this.allLinkedPeptide = allLinkedPeptide;
     }
 
-    public void linkPeptide(List<Peptide> readResult,  HandlePeptide handlePeptide){
+    public void linkPeptide(List<Peptide> readResult){
         Integer num=new Integer(0);
         for(int i = 0 ; i < readResult.size() ; i++)
         {
             for(int j = i+1 ; j < readResult.size();j++)
             {
+                HandlePeptideFour handlePeptide=new HandlePeptideFour();
                 Peptide composeOne = readResult.get(i);
                 Peptide composeTwo = readResult.get(j);
-                List<IonMass> result = handlePeptide.getAllPossibleIonMass(composeOne.getName(),composeOne.getCutPoint(),composeTwo.getName(),composeTwo.getCutPoint());
+              //  List<IonMass> result = handlePeptide.getAllPossibleIonMass(composeOne.getName(),composeTwo.getName());
                 double mass1 = handlePeptide.calculate(composeOne.getName(),0,composeOne.getName().length());
                 double mass2 = handlePeptide.calculate(composeTwo.getName(),0,composeTwo.getName().length());
                 double parentMass = mass1 + mass2 + handlePeptide.getReagentMass();
@@ -51,7 +52,6 @@ public class PeptideIndex {
                 linkedPeptide.setParentMass(parentMass);
                 linkedPeptide.setPeptideOne(composeOne);
                 linkedPeptide.setPeptideTwo(composeTwo);
-                linkedPeptide.setAllPossibleIonMass(result);
                 allLinkedPeptide.add(linkedPeptide);
 
                 Integer parentInt=new Double(linkedPeptide.getParentMass()).intValue();
@@ -66,13 +66,18 @@ public class PeptideIndex {
                 num++;
             }
         }
+        int cunt=0;
+        for (ArrayList<Integer> value : peptideIndex.values()) {
+            cunt+=value.size();
+        }
+        System.out.println("peptideIndex value size:"+cunt);
+        System.out.println("peptideIndex size:"+peptideIndex.size());
     }
 
     public void init(String filePath){
         ReadPeptide readFile = new ReadPeptide();
         List<Peptide> readResult = readFile.doRead(filePath);
-        HandlePeptide handlePeptide = new HandlePeptide();
-        linkPeptide(readResult,handlePeptide);
+        linkPeptide(readResult);
 
         /*
         Iterator iiii = allLinkedPeptide.iterator();

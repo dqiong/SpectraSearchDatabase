@@ -9,8 +9,8 @@ import java.util.Map;
 public class BaseMass {
     public final static double waterMass = 18.01524;
     public final static double hydrogen=1.00727638;
-    public final static double tolerance=0.005;
-    public final static double parent_tolerance=0.02;
+    public final static double tolerance=0.05;
+    public final static double parent_tolerance=0.8;
     public final static double PROTON_MASS = 1.00727638;
     public final static double PHOTO=228.110996;
     public final static double HALF_PHOTO=114.055498;

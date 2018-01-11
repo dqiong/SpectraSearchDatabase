@@ -56,9 +56,15 @@ public class MatchEntry {
 
     public String toString(){
         StringBuilder res=new StringBuilder();
-        res.append(spectra);
-        res.append("匹配到的交联肽：");
-        res.append(linkedPeptide);
+        res.append(spectra.toString());
+        res.append("score: ");
+        res.append(score);
+        res.append("\n");
+        res.append("matched peptides：");
+        res.append(linkedPeptide.getPeptideOne().getName());
+        res.append("\t");
+        res.append(linkedPeptide.getPeptideTwo().getName());
+        res.append("\n\n");
         return res.toString();
     }
 }
