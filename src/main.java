@@ -50,7 +50,8 @@ public class main {
 
 
         SearchMethod sm=new SearchMethod();
-        sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),peindex.getPeptideIndex(),rs.getAllSpectra());
+       // sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),peindex.getPeptideIndex(),rs.getAllSpectra());
+        sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),rs.getAllSpectra());
 
         try{
             FileWriter fw=new FileWriter(new File(FilePath.RESULT_PATH));

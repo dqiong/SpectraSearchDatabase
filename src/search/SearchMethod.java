@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.Math.abs;
+
 /**
  * \* Created with IntelliJ IDEA.
  * \* User: qiong
@@ -41,11 +43,19 @@ public class SearchMethod {
     }
 
     private boolean equalParentMass(double a,double b){
+        double diff=abs(a-b);
+        double real_ppm=(diff/b)*1000000;
+        if(real_ppm<=BaseMass.parent_tolerance)
+            return true;
+        else
+            return false;
+        /*
         if( ((a- BaseMass.parent_tolerance)<b && (a+ BaseMass.parent_tolerance)>b) || (((b- BaseMass.parent_tolerance)<a && (b+ BaseMass.parent_tolerance)>a)) ){
             return true;
         }
         else
             return  false;
+         */
     }
 
     //一个谱图与数据库中一个理论交联肽段离子比对得分
@@ -131,5 +141,35 @@ public class SearchMethod {
 
             }
         }
+    }
+
+    public void spectraSearchDatabase(List<LinkedPeptide> allLinkedPeptide,
+                                       List<Spectra> allSpectra){
+        int num=0;
+        for(Spectra spectra:allSpectra){
+            Double parentMass=new Double(spectra.getParentMass());
+            ArrayList<Integer> indexOfCandidateLinkedPeptide=new ArrayList<>();
+            for(int k=0; k<allLinkedPeptide.size();k++){
+                if(this.equalParentMass(allLinkedPeptide.get(k).getParentMass(),parentMass)) {
+                    indexOfCandidateLinkedPeptide.add(k);
+                    if(!allLinkedPeptide.get(k).getIsCalculatedIonMass()){
+                        allLinkedPeptide.get(k).setIsCalculatedIonMass(true);
+                        HandlePeptideFour handlePeptide=new HandlePeptideFour();
+                        String p1=allLinkedPeptide.get(k).getPeptideOne().getName();
+                        String p2=allLinkedPeptide.get(k).getPeptideTwo().getName();
+                        allLinkedPeptide.get(k).setAllPossibleIonMass(handlePeptide.getAllPossibleOnlyFourCases(p1,p2));
+                    }
+                }
+            }
+            if(indexOfCandidateLinkedPeptide.size()<1){
+                num++;
+                continue;
+                //System.out.println("spectra: "+spectra+"parent mass 数据库中无对应的交联肽段！");
+            }
+            else {
+                this.resultMatch.add(this.spectraAlignmentLinkedPeptideIndex(allLinkedPeptide,indexOfCandidateLinkedPeptide,spectra));
+            }
+        }
+        System.out.println("the number of spectra that has no the corresponding linkedpeptide in "+ BaseMass.parent_tolerance +"ppm : "+num);
     }
 }
