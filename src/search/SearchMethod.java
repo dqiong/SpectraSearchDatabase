@@ -68,16 +68,16 @@ public class SearchMethod {
         int i=0;
         for(Peak peak: peaks){
             double peakMass=peak.getMass();
-            for(;i<ionMasses.size();i++){
+            for(i=0;i<ionMasses.size();i++){
                 double ionTmpMass=ionMasses.get(i).getMass();
                 if(this.equalMass(peakMass,ionTmpMass)){
                     score+=1.0;
-                    break;
                 }
             }
-            if(i>=(ionMasses.size()-1) || i>peaks.size()){
-                break;
-            }
+
+          //  if(i>=(ionMasses.size()-1) || i>peaks.size()){
+          //      break;
+           // }
         }
         return score;
     }
@@ -167,7 +167,10 @@ public class SearchMethod {
                 //System.out.println("spectra: "+spectra+"parent mass 数据库中无对应的交联肽段！");
             }
             else {
-                this.resultMatch.add(this.spectraAlignmentLinkedPeptideIndex(allLinkedPeptide,indexOfCandidateLinkedPeptide,spectra));
+                MatchEntry me=this.spectraAlignmentLinkedPeptideIndex(allLinkedPeptide,indexOfCandidateLinkedPeptide,spectra);
+                if(me.getScore()>0.0){
+                    this.resultMatch.add(me);
+                }
             }
         }
         System.out.println("the number of spectra that has no the corresponding linkedpeptide in "+ BaseMass.parent_tolerance +"ppm : "+num);

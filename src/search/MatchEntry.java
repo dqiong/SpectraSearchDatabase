@@ -20,7 +20,7 @@ public class MatchEntry {
     private Spectra spectra;
     private LinkedPeptide linkedPeptide;
     private List<Peak> matchedPeaks;
-    private double score;
+    private Double score;
 
     public Spectra getSpectra() {
         return spectra;
@@ -46,7 +46,7 @@ public class MatchEntry {
         this.matchedPeaks = matchedPeaks;
     }
 
-    public double getScore() {
+    public Double getScore() {
         return score;
     }
 

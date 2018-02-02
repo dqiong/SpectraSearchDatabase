@@ -1,5 +1,6 @@
 package spectra;
 
+import utils.BaseMass;
 import utils.FilePath;
 
 import java.io.*;
@@ -33,20 +34,31 @@ public class ReadSpectra {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String temp = bufferedReader.readLine();
             double parentMass=0.0;
+            double charge=1.0;
             int count=0;
             while(temp != null)
             {
                 count++;
+                if(temp.split("=")[0].equals("CHARGE")){
+                    String stringTemp = temp.split("=")[1].split("\\+")[0];
+                    charge=Double.parseDouble(stringTemp);
+                    temp = bufferedReader.readLine();
 
+                }
                 if (temp.split("=")[0].equals("PEPMASS")){
                     String [] stringArray = temp.split("=");
-                    parentMass=Double.parseDouble(stringArray[1]);
+                    double pepMass=Double.parseDouble(stringArray[1]);
+                    parentMass=(pepMass*charge)-((charge-1)* BaseMass.PROTON_MASS);
+
                     List<Peak> peaks= new ArrayList<>();
                     temp = bufferedReader.readLine();
                     while(temp!=null && temp.split("\t").length>1){
                         String [] tempPeak= temp.split("\t");
                         Peak peak=new Peak();
-                        peak.setMass(Double.parseDouble(tempPeak[0]));
+                        double peakMass=Double.parseDouble(tempPeak[0]);
+                        double peakCharge=Double.parseDouble(tempPeak[2]);
+
+                        peak.setMass((peakMass*peakCharge)-((peakCharge-1)*BaseMass.PROTON_MASS));
                         peak.setIntensity(Double.parseDouble(tempPeak[1]));
                         peaks.add(peak);
                         temp = bufferedReader.readLine();
@@ -55,6 +67,8 @@ public class ReadSpectra {
                     spec.setParentMass(parentMass);
                     spec.setPeaks(peaks);
                     allSpectra.add(spec);
+
+                    charge=1.0;
                     parentMass=0.0;
                 }
                 temp = bufferedReader.readLine();

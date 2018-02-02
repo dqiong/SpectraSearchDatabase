@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import search.MatchEntry;
 import spectra.ReadSpectra;
 import spectra.Spectra;
 import utils.FilePath;
@@ -52,12 +53,22 @@ public class main {
         SearchMethod sm=new SearchMethod();
        // sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),peindex.getPeptideIndex(),rs.getAllSpectra());
         sm.spectraSearchDatabase(peindex.getAllLinkedPeptide(),rs.getAllSpectra());
+        List<MatchEntry> resultMatch=sm.getResultMatch();
 
+        Collections.sort(resultMatch, new Comparator<MatchEntry>() {
+            @Override
+            public int compare(MatchEntry o1, MatchEntry o2) {
+                //降序
+                return o2.getScore().compareTo(o1.getScore());
+            }
+        });
         try{
             FileWriter fw=new FileWriter(new File(FilePath.RESULT_PATH));
-            for(int i=0;i<sm.getResultMatch().size();i++){
-                String str= sm.getResultMatch().get(i).toString();
-                fw.write(str);
+            for(int i=0;i<resultMatch.size();i++){
+                if(resultMatch.get(i).getScore()>0.0){
+                    String str= resultMatch.get(i).toString();
+                    fw.write(str);
+                }
             }
             fw.close();
         }catch (Exception e){
