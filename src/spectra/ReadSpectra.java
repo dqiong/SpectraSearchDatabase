@@ -35,10 +35,16 @@ public class ReadSpectra {
             String temp = bufferedReader.readLine();
             double parentMass=0.0;
             double charge=1.0;
+            StringBuffer title=new StringBuffer("");
             int count=0;
             while(temp != null)
             {
                 count++;
+                if(temp.split("=")[0].equals("TITLE")){
+                    title.append(temp.split("=")[1]);
+                    temp = bufferedReader.readLine();
+
+                }
                 if(temp.split("=")[0].equals("CHARGE")){
                     String stringTemp = temp.split("=")[1].split("\\+")[0];
                     charge=Double.parseDouble(stringTemp);
@@ -66,10 +72,12 @@ public class ReadSpectra {
                     Spectra spec= new Spectra();
                     spec.setParentMass(parentMass);
                     spec.setPeaks(peaks);
+                    spec.setNumber(count);
+                    spec.setTitle(title.toString());
                     allSpectra.add(spec);
 
+                    title.delete(0,title.length());
                     charge=1.0;
-                    parentMass=0.0;
                 }
                 temp = bufferedReader.readLine();
             }
