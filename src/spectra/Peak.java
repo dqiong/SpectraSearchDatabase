@@ -12,6 +12,7 @@ package spectra;
 public class Peak implements Comparable{
     private double mass;
     private double intensity;
+    private boolean isMatched;
 
     public double getIntensity() {
         return intensity;
@@ -30,8 +31,12 @@ public class Peak implements Comparable{
         this.intensity = intensity;
     }
 
-    public String toString(){
-        return (mass+"\t"+intensity+"\n");
+    public boolean getIsMatched() {
+        return isMatched;
+    }
+
+    public void setIsMatched(boolean matched) {
+        isMatched = matched;
     }
 
     @Override
@@ -46,5 +51,11 @@ public class Peak implements Comparable{
         else {
             return 0;
         }
+    }
+
+    public String toString(){
+        if(isMatched)
+            return (mass+"\t"+intensity+"\n");
+        else return "";
     }
 }

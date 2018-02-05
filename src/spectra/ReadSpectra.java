@@ -66,6 +66,7 @@ public class ReadSpectra {
 
                         peak.setMass((peakMass*peakCharge)-((peakCharge-1)*BaseMass.PROTON_MASS));
                         peak.setIntensity(Double.parseDouble(tempPeak[1]));
+                        peak.setIsMatched(false);
                         peaks.add(peak);
                         temp = bufferedReader.readLine();
                     }

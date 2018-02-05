@@ -61,6 +61,7 @@ public class SearchMethod {
     //一个谱图与数据库中一个理论交联肽段离子比对得分
     private double getMatchedScore(Spectra spectra,LinkedPeptide linkedPeptide){
         double score=0.0;
+        /*
         List<Peak> peaks=spectra.getPeaks();
         Collections.sort(peaks);
         List<IonMass> ionMasses=linkedPeptide.getAllPossibleIonMass();
@@ -74,11 +75,19 @@ public class SearchMethod {
                     score+=1.0;
                 }
             }
-
-          //  if(i>=(ionMasses.size()-1) || i>peaks.size()){
-          //      break;
-           // }
+        } */
+        List<IonMass> ionMasses=linkedPeptide.getAllPossibleIonMass();
+        for(int i=0;i<spectra.getPeaks().size();i++){
+            double peakMass=spectra.getPeaks().get(i).getMass();
+            for(int j=0;j<ionMasses.size();j++){
+                double ionTmpMass=ionMasses.get(j).getMass();
+                if(this.equalMass(peakMass,ionTmpMass)){
+                    score+=1.0;
+                    spectra.getPeaks().get(i).setIsMatched(true);
+                }
+            }
         }
+
         return score;
     }
 

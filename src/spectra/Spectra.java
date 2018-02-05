@@ -62,6 +62,8 @@ public class Spectra {
         res.append("\t Number:");
         res.append(number);
         res.append("\n");
+        res.append("matched peaks:");
+        res.append("\n");
         Iterator it1 = this.peaks.iterator();
         while (it1.hasNext()) {
             res.append(it1.next());
