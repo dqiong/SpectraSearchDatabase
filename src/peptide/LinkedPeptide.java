@@ -61,6 +61,9 @@ public class LinkedPeptide {
 
     public String toString(){
         StringBuilder res=new StringBuilder();
+        res.append("mass: ");
+        res.append(this.parentMass);
+        res.append("\t");
         res.append(peptideOne.getName());
         res.append("\t");
         res.append(peptideTwo.getName());

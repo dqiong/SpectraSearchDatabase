@@ -49,13 +49,6 @@ public class SearchMethod {
             return true;
         else
             return false;
-        /*
-        if( ((a- BaseMass.parent_tolerance)<b && (a+ BaseMass.parent_tolerance)>b) || (((b- BaseMass.parent_tolerance)<a && (b+ BaseMass.parent_tolerance)>a)) ){
-            return true;
-        }
-        else
-            return  false;
-         */
     }
 
     //一个谱图与数据库中一个理论交联肽段离子比对得分

@@ -61,6 +61,9 @@ public class MatchEntry {
         res.append(score);
         res.append("\n");
         res.append("matched peptides：");
+        res.append("mass: ");
+        res.append(linkedPeptide.getParentMass());
+        res.append("\t");
         res.append(linkedPeptide.getPeptideOne().getName());
         res.append("\t");
         res.append(linkedPeptide.getPeptideTwo().getName());

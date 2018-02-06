@@ -10,7 +10,7 @@ public class BaseMass {
     public final static double waterMass = 18.01524;
     public final static double hydrogen=1.00727638;
     public final static double tolerance=0.05;
-    public final static double parent_tolerance=20; //单位ppm
+    public final static double parent_tolerance=20.0; //单位ppm
     public final static double PROTON_MASS = 1.00727638;
     public final static double PHOTO=228.110996;
     public final static double HALF_PHOTO=114.055498;
