@@ -1,5 +1,6 @@
 package peptide;
 
+import utils.BaseMass;
 import utils.FilePath;
 import utils.IonMass;
 
@@ -47,7 +48,7 @@ public class PeptideIndex {
               //  List<IonMass> result = handlePeptide.getAllPossibleIonMass(composeOne.getName(),composeTwo.getName());
                 double mass1 = handlePeptide.calculate(composeOne.getName(),0,composeOne.getName().length());
                 double mass2 = handlePeptide.calculate(composeTwo.getName(),0,composeTwo.getName().length());
-                double parentMass = mass1 + mass2 + handlePeptide.getReagentMass();
+                double parentMass = mass1 + mass2 + handlePeptide.getReagentMass()+ BaseMass.waterMass+BaseMass.waterMass;
                 LinkedPeptide linkedPeptide = new LinkedPeptide();
                 linkedPeptide.setParentMass(parentMass);
                 linkedPeptide.setPeptideOne(composeOne);
