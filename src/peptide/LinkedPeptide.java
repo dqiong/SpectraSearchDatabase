@@ -10,6 +10,8 @@ import java.util.List;
 public class LinkedPeptide {
     private Peptide peptideOne;
     private Peptide peptideTwo;
+    private int oneLocationo;
+    private int twoLocation;
     private List<IonMass> allPossibleIonMass;
     double parentMass;
     private boolean isCalculatedIonMass;
