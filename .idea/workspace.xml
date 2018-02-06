@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6945b2b8-01fc-4d3f-a00d-943fc708bd5a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/data/result.txt" afterPath="$PROJECT_DIR$/data/result.txt" />
-      <change beforePath="$PROJECT_DIR$/out/production/protein/peptide/PeptideIndex.class" afterPath="$PROJECT_DIR$/out/production/protein/peptide/PeptideIndex.class" />
-      <change beforePath="$PROJECT_DIR$/src/peptide/PeptideIndex.java" afterPath="$PROJECT_DIR$/src/peptide/PeptideIndex.java" />
+      <change beforePath="$PROJECT_DIR$/src/utils/BaseMass.java" afterPath="$PROJECT_DIR$/src/utils/BaseMass.java" />
     </list>
     <ignored path="protein.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeptideIndex.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PeptideIndex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/peptide/PeptideIndex.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
@@ -133,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseMass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BaseMass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/BaseMass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+            <state relative-caret-position="584">
+              <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -190,11 +188,11 @@
         <option value="$PROJECT_DIR$/src/spectra/Peak.java" />
         <option value="$PROJECT_DIR$/src/spectra/Spectra.java" />
         <option value="$PROJECT_DIR$/src/spectra/ReadSpectra.java" />
-        <option value="$PROJECT_DIR$/src/utils/BaseMass.java" />
         <option value="$PROJECT_DIR$/src/peptide/LinkedPeptide.java" />
         <option value="$PROJECT_DIR$/src/search/SearchMethod.java" />
         <option value="$PROJECT_DIR$/src/search/MatchEntry.java" />
         <option value="$PROJECT_DIR$/src/peptide/PeptideIndex.java" />
+        <option value="$PROJECT_DIR$/src/utils/BaseMass.java" />
       </list>
     </option>
   </component>
@@ -1112,14 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/peptide/HandlePeptideFour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/peptide/HandlePeptide.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1181,14 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/BaseMass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/peptide/PeptideIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -1203,6 +1185,22 @@
             <element signature="e#872#873#0" expanded="true" />
             <element signature="e#928#929#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/peptide/HandlePeptideFour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/BaseMass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

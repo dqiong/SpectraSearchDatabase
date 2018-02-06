@@ -35,7 +35,7 @@ public class BaseMass {
         mapBaseMass.put('M',131.040485);
         mapBaseMass.put('S',87.032028);
         mapBaseMass.put('T',101.047679);
-        mapBaseMass.put('C',103.009185);
+        mapBaseMass.put('C',103.009185+57.021464); //每个C加一个PTM
         mapBaseMass.put('P',97.052764);
         mapBaseMass.put('H',137.058912);
         mapBaseMass.put('R',156.101111);
